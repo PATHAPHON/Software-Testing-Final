@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-10-23T13:46:15.844Z",
+  "page": "register",
+  "formExample": {
+    "name": "Pat0",
+    "email": "Pat0@gmail.com",
+    "password": "*********"
+  },
+  "networkIntercepts": [
+    {
+      "url": "http://localhost:3000/registers",
+      "method": "POST",
+      "requestBody": {
+        "username": "Pat2222000",
+        "email": "Pat2222000@gmail.com",
+        "password": "222212345678900",
+        "role": "user"
+      },
+      "statusCode": 201,
+      "responseBody": {
+        "message": "User created successfully",
+        "user": {
+          "id": 87,
+          "username": "Pat2222000",
+          "email": "Pat2222000@gmail.com",
+          "usertype": "user"
+        }
+      }
+    }
+  ]
+}

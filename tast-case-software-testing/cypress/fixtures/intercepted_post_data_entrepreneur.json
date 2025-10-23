@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-10-23T14:04:53.728Z",
+  "page": "register-entrepreneur",
+  "role": "entrepreneur",
+  "formExample": {
+    "name": "Entrepreneur001",
+    "email": "entrepreneur001@example.com",
+    "password": "*********"
+  },
+  "networkIntercepts": [
+    {
+      "url": "http://localhost:3000/registers",
+      "method": "POST",
+      "requestBody": {
+        "username": "Entrepreneur00199",
+        "email": "entrepreneur00199@example.com",
+        "password": "E12345678999",
+        "role": "entrepreneur"
+      },
+      "statusCode": 201,
+      "responseBody": {
+        "message": "User created successfully",
+        "user": {
+          "id": 88,
+          "username": "Entrepreneur00199",
+          "email": "entrepreneur00199@example.com",
+          "usertype": "Entrepreneur"
+        }
+      }
+    }
+  ]
+}
