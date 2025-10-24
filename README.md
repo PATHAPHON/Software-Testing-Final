@@ -1,14 +1,21 @@
-# การทดสอบระบบเว็บไซต์ RaiRang (E-Commerce OTOP)
+# การทดสอบระบบเว็บไซต์ (E-Commerce OTOP)
 
-## บทที่ 3 ทำหน้าเว็บสำหรับการทดสอบระบบ (UI Test)
+ทำหน้าเว็บสำหรับการทดสอบระบบ (UI Test)
 
-เพื่อประเมินประสิทธิภาพและความถูกต้องของการทำงานของเว็บไซต์ **RaiRang** จึงได้ดำเนินการออกแบบและทดสอบหน้าจอหลักของระบบจำนวน 3 ส่วน ได้แก่
+### 3.2 หน้าเว็บที่ใช้ทดสอบ
 
-* หน้าแรก (**Homepage**)
-* หน้าล็อกอิน (**Login Page**)
-* หน้าสมัครสมาชิก (**Registration Page**)
+#### 🏠 หน้า Home Page
 
-การทดสอบดำเนินการในรูปแบบ **Manual Testing** โดยให้ผู้ทดสอบเข้าใช้งานระบบจริง เพื่อสังเกตพฤติกรรมการตอบสนองของหน้าเว็บในแต่ละขั้นตอน และตรวจสอบว่าผลลัพธ์ที่แสดงออกมาตรงตามที่ระบบคาดหวังหรือไม่
+![หน้า Home Page](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ2.png)
+
+#### 🔐 หน้า Login Page
+
+![หน้า Login Page](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ3.png)
+
+#### 📝 หน้า Register Page
+
+![หน้า Register Page](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ4.png)
+
 
 ---
 
@@ -57,42 +64,54 @@ describe('Register Page Test', () => {
   });
 });
 ```
+การทดสอบ Framework (Cypress)
+
+ทดสอบผ่าน Framework **Cypress** เพื่อจำลองพฤติกรรมผู้ใช้จริงบนเว็บไซต์ เช่น การเข้าสู่ระบบ, สมัครสมาชิก, และตรวจสอบองค์ประกอบ UI โดยได้ผลลัพธ์เป็นไปตามที่คาดหวังทุกกรณี
+
+![รูปภาพ13](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ13.png)
+
+![รูปภาพ14](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ14.png)
+
+![รูปภาพ15](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ15.png)
+
+![รูปภาพ16](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ16.png)
+
+![รูปภาพ17](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ17.png)
+
+![รูปภาพ18](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ18.png)
+
+![รูปภาพ19](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ19.png)
+
+![รูปภาพ20](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ20.png)
+
+![รูปภาพ21](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ21.png)
+
+![รูปภาพ22](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ22.png)
+
+![รูปภาพ23](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ23.png)
+
+![รูปภาพ24](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ24.png)
+
+![รูปภาพ25](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ25.png)
+
+![รูปภาพ26](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ26.png)
+
+![รูปภาพ27](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ27.png)
 
 ---
 
-### 3.2 หน้าเว็บที่ใช้ทดสอบ
 
-#### 🏠 หน้า Home Page
-
-![หน้า Home Page](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ2.png)
-
-#### 🔐 หน้า Login Page
-
-![หน้า Login Page](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ3.png)
-
-#### 📝 หน้า Register Page
-
-![หน้า Register Page](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ4.png)
-
----
-
-## บทที่ 4 ผลการทดสอบ
-
-### 4.1 การทดสอบ API Test
+### การทดสอบ API Test
 
 ดำเนินการทดสอบ API ผ่าน Postman โดยมีการตรวจสอบการตอบสนองของ Endpoint หลัก ได้แก่
 
 * **API Register** — ตรวจสอบการสร้างผู้ใช้ใหม่, ความถูกต้องของข้อมูลที่ส่งไปยังฐานข้อมูล และ Response Code (201 Created)
 * **API Login** — ตรวจสอบการยืนยันตัวตนด้วย Username และ Password ที่ถูกต้อง (Response 200 OK)
 
-### 4.2 การทดสอบด้วย Newman
-
-ใช้ **Newman** สำหรับรัน Test Collection จาก Postman เพื่อทดสอบแบบอัตโนมัติ โดยมีผลสรุปดังนี้:
-
 * **API Dashboard** ผ่านการทดสอบทั้งหมด
 * **Total Requests:** 20 รายการ (ผ่านทั้งหมด ✅)
 
-#### 📊 ภาพผลการทดสอบ Newman และ Framework
+#### 📊 ภาพผลการทดสอบ Newman 
 
 ![รูปภาพ5](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ5.png)
 ![รูปภาพ6](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ6.png)
@@ -100,41 +119,6 @@ describe('Register Page Test', () => {
 ![รูปภาพ8](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ8.png)
 ![รูปภาพ9](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ9.png)
 ![รูปภาพ10](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ10.png)
-![รูปภาพ11](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ11.png)
-![รูปภาพ12](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ12.png)
-![รูปภาพ13](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ13.png)
-![รูปภาพ14](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ14.png)
-![รูปภาพ15](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ15.png)
-![รูปภาพ16](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ16.png)
-![รูปภาพ17](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ17.png)
-![รูปภาพ18](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ18.png)
-![รูปภาพ19](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ19.png)
-![รูปภาพ20](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ20.png)
-![รูปภาพ21](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ21.png)
-![รูปภาพ22](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ22.png)
-![รูปภาพ23](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ23.png)
-![รูปภาพ24](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ24.png)
-![รูปภาพ25](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ25.png)
-![รูปภาพ26](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ26.png)
-![รูปภาพ27](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ27.png)
 
-### 4.3 การทดสอบ Framework (Cypress)
 
-ทดสอบผ่าน Framework **Cypress** เพื่อจำลองพฤติกรรมผู้ใช้จริงบนเว็บไซต์ เช่น การเข้าสู่ระบบ, สมัครสมาชิก, และตรวจสอบองค์ประกอบ UI โดยได้ผลลัพธ์เป็นไปตามที่คาดหวังทุกกรณี
 
-#### รายการทดสอบที่ดำเนินการ
-
-* `register-user`
-* `register-entrepreneur`
-* `register-fail-username` (ไม่ใส่ชื่อ)
-* `register-fail-email` (ไม่ใส่ @gmail หรือไม่ใส่ email)
-* `register-duplicate-username` (ข้อมูลซ้ำในระบบ)
-* `register-fail-password` (กรอก confirm password ผิด, ไม่ใส่ password หรือ confirm password)
-* `login-user` (ข้อมูลถูกต้อง)
-* `login-entrepreneur` (ข้อมูลถูกต้อง)
-* `login-fail` (ไม่มีข้อมูลในระบบ, ไม่ใส่ username หรือ password)
-
----
-
-> ✅ **สรุปผลการทดสอบ:**
-> ระบบเว็บไซต์ E-Commerce สำหรับสินค้า OTOP สามารถทำงานได้ถูกต้องตามที่ออกแบบไว้ในทุกกรณี ทั้งในส่วนของ API และ UI โดยผ่านการทดสอบทั้งหมด 20 กรณีโดยไม่มีข้อผิดพลาด
