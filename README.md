@@ -62,9 +62,17 @@ describe('Register Page Test', () => {
 
 ### 3.2 หน้าเว็บที่ใช้ทดสอบ
 
-* **หน้า Home Page**
-* **หน้า Login Page**
-* **หน้า Register Page**
+#### 🏠 หน้า Home Page
+
+![หน้า Home Page](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ2.png)
+
+#### 🔐 หน้า Login Page
+
+![หน้า Login Page](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ3.png)
+
+#### 📝 หน้า Register Page
+
+![หน้า Register Page](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ4.png)
 
 ---
 
@@ -83,6 +91,32 @@ describe('Register Page Test', () => {
 
 * **API Dashboard** ผ่านการทดสอบทั้งหมด
 * **Total Requests:** 20 รายการ (ผ่านทั้งหมด ✅)
+
+#### 📊 ภาพผลการทดสอบ Newman และ Framework
+
+![รูปภาพ5](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ5.png)
+![รูปภาพ6](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ6.png)
+![รูปภาพ7](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ7.png)
+![รูปภาพ8](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ8.png)
+![รูปภาพ9](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ9.png)
+![รูปภาพ10](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ10.png)
+![รูปภาพ11](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ11.png)
+![รูปภาพ12](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ12.png)
+![รูปภาพ13](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ13.png)
+![รูปภาพ14](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ14.png)
+![รูปภาพ15](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ15.png)
+![รูปภาพ16](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ16.png)
+![รูปภาพ17](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ17.png)
+![รูปภาพ18](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ18.png)
+![รูปภาพ19](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ19.png)
+![รูปภาพ20](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ20.png)
+![รูปภาพ21](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ21.png)
+![รูปภาพ22](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ22.png)
+![รูปภาพ23](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ23.png)
+![รูปภาพ24](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ24.png)
+![รูปภาพ25](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ25.png)
+![รูปภาพ26](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ26.png)
+![รูปภาพ27](https://raw.githubusercontent.com/PATHAPHON/Software-Testing-Final/main/report/cypress/รูปภาพ27.png)
 
 ### 4.3 การทดสอบ Framework (Cypress)
 
