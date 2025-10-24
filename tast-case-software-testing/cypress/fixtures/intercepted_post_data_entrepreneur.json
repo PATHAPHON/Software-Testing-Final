@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-23T14:04:53.728Z",
+  "timestamp": "2025-10-24T07:00:40.908Z",
   "page": "register-entrepreneur",
   "role": "entrepreneur",
   "formExample": {
@@ -17,15 +17,9 @@
         "password": "E12345678999",
         "role": "entrepreneur"
       },
-      "statusCode": 201,
+      "statusCode": 409,
       "responseBody": {
-        "message": "User created successfully",
-        "user": {
-          "id": 88,
-          "username": "Entrepreneur00199",
-          "email": "entrepreneur00199@example.com",
-          "usertype": "Entrepreneur"
-        }
+        "message": "อีเมลนี้ถูกใช้ไปแล้ว"
       }
     }
   ]

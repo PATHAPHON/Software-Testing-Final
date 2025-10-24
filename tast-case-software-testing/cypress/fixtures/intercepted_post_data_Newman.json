@@ -1,0 +1,269 @@
+{
+  "timestamp": "2025-10-24T07:03:28.938Z",
+  "runs": 10,
+  "page": "register",
+  "formSamples": [
+    {
+      "iteration": 1,
+      "username": "pat57142785640",
+      "email": "pat57142785640@example.com",
+      "passwordMasked": "********"
+    },
+    {
+      "iteration": 2,
+      "username": "pat57148150522",
+      "email": "pat57148150522@example.com",
+      "passwordMasked": "********"
+    },
+    {
+      "iteration": 3,
+      "username": "pat57152308983",
+      "email": "pat57152308983@example.com",
+      "passwordMasked": "********"
+    },
+    {
+      "iteration": 4,
+      "username": "pat57159628689",
+      "email": "pat57159628689@example.com",
+      "passwordMasked": "********"
+    },
+    {
+      "iteration": 5,
+      "username": "pat57165974535",
+      "email": "pat57165974535@example.com",
+      "passwordMasked": "********"
+    },
+    {
+      "iteration": 6,
+      "username": "pat57170483080",
+      "email": "pat57170483080@example.com",
+      "passwordMasked": "********"
+    },
+    {
+      "iteration": 7,
+      "username": "pat57174135543",
+      "email": "pat57174135543@example.com",
+      "passwordMasked": "********"
+    },
+    {
+      "iteration": 8,
+      "username": "pat57179656624",
+      "email": "pat57179656624@example.com",
+      "passwordMasked": "********"
+    },
+    {
+      "iteration": 9,
+      "username": "pat57184681963",
+      "email": "pat57184681963@example.com",
+      "passwordMasked": "********"
+    },
+    {
+      "iteration": 10,
+      "username": "pat57189811969",
+      "email": "pat57189811969@example.com",
+      "passwordMasked": "********"
+    }
+  ],
+  "networkIntercepts": [
+    {
+      "url": "http://localhost:3000/registers",
+      "method": "POST",
+      "requestBody": {
+        "username": "pat57142785640",
+        "email": "pat57142785640@example.com",
+        "password": "Y91098831@",
+        "role": "user"
+      },
+      "statusCode": 201,
+      "responseBody": {
+        "message": "User created successfully",
+        "user": {
+          "id": 108,
+          "username": "pat57142785640",
+          "email": "pat57142785640@example.com",
+          "usertype": "user"
+        }
+      }
+    },
+    {
+      "url": "http://localhost:3000/registers",
+      "method": "POST",
+      "requestBody": {
+        "username": "pat57148150522",
+        "email": "pat57148150522@example.com",
+        "password": "g37871346!",
+        "role": "user"
+      },
+      "statusCode": 201,
+      "responseBody": {
+        "message": "User created successfully",
+        "user": {
+          "id": 109,
+          "username": "pat57148150522",
+          "email": "pat57148150522@example.com",
+          "usertype": "user"
+        }
+      }
+    },
+    {
+      "url": "http://localhost:3000/registers",
+      "method": "POST",
+      "requestBody": {
+        "username": "pat57152308983",
+        "email": "pat57152308983@example.com",
+        "password": "d40622599#",
+        "role": "user"
+      },
+      "statusCode": 201,
+      "responseBody": {
+        "message": "User created successfully",
+        "user": {
+          "id": 110,
+          "username": "pat57152308983",
+          "email": "pat57152308983@example.com",
+          "usertype": "user"
+        }
+      }
+    },
+    {
+      "url": "http://localhost:3000/registers",
+      "method": "POST",
+      "requestBody": {
+        "username": "pat57159628689",
+        "email": "pat57159628689@example.com",
+        "password": "Y69181835!",
+        "role": "user"
+      },
+      "statusCode": 201,
+      "responseBody": {
+        "message": "User created successfully",
+        "user": {
+          "id": 111,
+          "username": "pat57159628689",
+          "email": "pat57159628689@example.com",
+          "usertype": "user"
+        }
+      }
+    },
+    {
+      "url": "http://localhost:3000/registers",
+      "method": "POST",
+      "requestBody": {
+        "username": "pat57165974535",
+        "email": "pat57165974535@example.com",
+        "password": "X54895096!",
+        "role": "user"
+      },
+      "statusCode": 201,
+      "responseBody": {
+        "message": "User created successfully",
+        "user": {
+          "id": 112,
+          "username": "pat57165974535",
+          "email": "pat57165974535@example.com",
+          "usertype": "user"
+        }
+      }
+    },
+    {
+      "url": "http://localhost:3000/registers",
+      "method": "POST",
+      "requestBody": {
+        "username": "pat57170483080",
+        "email": "pat57170483080@example.com",
+        "password": "g15955629@",
+        "role": "user"
+      },
+      "statusCode": 201,
+      "responseBody": {
+        "message": "User created successfully",
+        "user": {
+          "id": 113,
+          "username": "pat57170483080",
+          "email": "pat57170483080@example.com",
+          "usertype": "user"
+        }
+      }
+    },
+    {
+      "url": "http://localhost:3000/registers",
+      "method": "POST",
+      "requestBody": {
+        "username": "pat57174135543",
+        "email": "pat57174135543@example.com",
+        "password": "e57792253@",
+        "role": "user"
+      },
+      "statusCode": 201,
+      "responseBody": {
+        "message": "User created successfully",
+        "user": {
+          "id": 114,
+          "username": "pat57174135543",
+          "email": "pat57174135543@example.com",
+          "usertype": "user"
+        }
+      }
+    },
+    {
+      "url": "http://localhost:3000/registers",
+      "method": "POST",
+      "requestBody": {
+        "username": "pat57179656624",
+        "email": "pat57179656624@example.com",
+        "password": "Y55258004@",
+        "role": "user"
+      },
+      "statusCode": 201,
+      "responseBody": {
+        "message": "User created successfully",
+        "user": {
+          "id": 115,
+          "username": "pat57179656624",
+          "email": "pat57179656624@example.com",
+          "usertype": "user"
+        }
+      }
+    },
+    {
+      "url": "http://localhost:3000/registers",
+      "method": "POST",
+      "requestBody": {
+        "username": "pat57184681963",
+        "email": "pat57184681963@example.com",
+        "password": "A36817336@",
+        "role": "user"
+      },
+      "statusCode": 201,
+      "responseBody": {
+        "message": "User created successfully",
+        "user": {
+          "id": 116,
+          "username": "pat57184681963",
+          "email": "pat57184681963@example.com",
+          "usertype": "user"
+        }
+      }
+    },
+    {
+      "url": "http://localhost:3000/registers",
+      "method": "POST",
+      "requestBody": {
+        "username": "pat57189811969",
+        "email": "pat57189811969@example.com",
+        "password": "B57054843@",
+        "role": "user"
+      },
+      "statusCode": 201,
+      "responseBody": {
+        "message": "User created successfully",
+        "user": {
+          "id": 117,
+          "username": "pat57189811969",
+          "email": "pat57189811969@example.com",
+          "usertype": "user"
+        }
+      }
+    }
+  ]
+}

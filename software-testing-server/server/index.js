@@ -54,7 +54,7 @@ async function init() {
 init();
 
 // ---------- Routes ----------
-app.get("/", (req, res) => {
+app.get("", (req, res) => {
   res.send("Hello World!");
 });
 
@@ -168,6 +168,181 @@ app.post("/users/login", async (req, res) => {
     return res.status(500).json({ message: "Internal Server Error" });
   }
 });
+
+app.delete("/users/:id", async (req, res) => {
+  try {
+    const id = Number(req.params.id);
+    if (!Number.isInteger(id) || id <= 0) {
+      return res.status(400).json({ message: "invalid user id" });
+    }
+
+    // ดึงข้อมูลก่อนลบ (ไม่อ้าง created_at/updated_at ถ้าไม่มีคอลัมน์)
+    const [rows] = await pool.query(
+      `SELECT id, username, email, usertype
+       FROM users WHERE id = ? LIMIT 1`,
+      [id]
+    );
+
+    if (!Array.isArray(rows) || rows.length === 0) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const deletedUser = rows[0];
+
+    const [result] = await pool.execute("DELETE FROM users WHERE id = ?", [id]);
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    return res.json({
+      message: "User deleted successfully",
+      deleted: {
+        id: deletedUser.id,
+        username: deletedUser.username,
+        email: deletedUser.email,
+        usertype: deletedUser.usertype,
+        role:
+          String(deletedUser.usertype || "").toLowerCase() === "entrepreneur"
+            ? "entrepreneur"
+            : "user",
+      },
+    });
+  } catch (err) {
+    logSqlError("Delete user error", err);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
+// GET /users — ดึงผู้ใช้ทั้งหมด
+app.get("/users", async (req, res) => {
+  try {
+    const [rows] = await pool.query(
+      "SELECT id, username, email, usertype FROM users ORDER BY id DESC"
+    );
+
+    // แปลง usertype ใน DB -> role (lowercase) ให้ฟรอนต์ใช้ง่าย (ถ้าไม่ต้องการ ลบ map ออกได้)
+    const users = rows.map((u) => ({
+      id: u.id,
+      username: u.username,
+      email: u.email,
+      usertype: u.usertype, // เก็บใน DB: "user" หรือ "Entrepreneur"
+      role: String(u.usertype || "").toLowerCase() === "entrepreneur" ? "entrepreneur" : "user",
+    }));
+
+    return res.json(users);
+  } catch (err) {
+    console.error("List users error:", err);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
+// ✅ PATCH /users/:id — ปลอดภัย ไม่แตะ updated_at, กันคีย์ซ้ำ, log ชัด
+app.patch("/users/:id", async (req, res) => {
+  try {
+    // --- ตรวจ id ---
+    const id = Number(req.params.id);
+    if (!Number.isInteger(id) || id <= 0) {
+      return res.status(400).json({ message: "invalid user id" });
+    }
+
+    // --- ดึงฟิลด์จาก body ---
+    const { username, email, password, role, usertype } = req.body || {};
+
+    // --- ประกอบ SQL แบบไดนามิก ---
+    const sets = [];
+    const params = [];
+
+    if (username !== undefined) {
+      const v = String(username).trim();
+      if (!v) return res.status(400).json({ message: "username ห้ามว่าง" });
+      sets.push("username = ?");
+      params.push(v);
+    }
+
+    if (email !== undefined) {
+      const v = String(email).trim();
+      if (!v) return res.status(400).json({ message: "email ห้ามว่าง" });
+      sets.push("email = ?");
+      params.push(v);
+    }
+
+    if (password !== undefined) {
+      const v = String(password);
+      if (v.length < 6) {
+        return res.status(400).json({ message: "password ต้องอย่างน้อย 6 ตัวอักษร" });
+      }
+      const hash = await bcrypt.hash(v, 10);
+      sets.push("password_hash = ?");
+      params.push(hash);
+    }
+
+    // รับ role/usertype (normalize → DB เก็บ "user" | "Entrepreneur")
+    const normalizeRole = (raw) => {
+      const r = String(raw ?? "").trim().toLowerCase();
+      if (r === "entrepreneur") return "Entrepreneur";
+      if (r === "user") return "user";
+      return null;
+    };
+    if (role !== undefined || usertype !== undefined) {
+      const finalRole = normalizeRole(role ?? usertype);
+      if (!finalRole) {
+        return res.status(400).json({ message: "role/usertype ไม่ถูกต้อง (user | entrepreneur)" });
+      }
+      sets.push("usertype = ?");
+      params.push(finalRole);
+    }
+
+    if (sets.length === 0) {
+      return res.status(400).json({ message: "ไม่มีฟิลด์ให้อัปเดต" });
+    }
+
+    // --- รัน UPDATE ---
+    const sql = `UPDATE users SET ${sets.join(", ")} WHERE id = ?`;
+    params.push(id);
+    const [result] = await pool.execute(sql, params);
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // --- อ่านค่าที่อัปเดตแล้วกลับไป (ไม่แตะ created_at/updated_at) ---
+    const [rows] = await pool.query(
+      `SELECT id, username, email, usertype FROM users WHERE id = ? LIMIT 1`,
+      [id]
+    );
+    const u = rows[0];
+
+    return res.json({
+      message: "User updated",
+      user: {
+        id: u.id,
+        username: u.username,
+        email: u.email,
+        usertype: u.usertype,
+        role: String(u.usertype || "").toLowerCase() === "entrepreneur" ? "entrepreneur" : "user",
+      },
+    });
+  } catch (err) {
+    // 🔎 log รายละเอียดเพื่อแก้ได้ไว
+    console.error("PATCH /users/:id error:", {
+      name: err?.name,
+      code: err?.code,
+      errno: err?.errno,
+      sqlState: err?.sqlState,
+      sqlMessage: err?.sqlMessage,
+      message: err?.message,
+      stack: err?.stack,
+    });
+
+    // จับเคสอีเมลซ้ำ (unique constraint)
+    if (err && err.code === "ER_DUP_ENTRY") {
+      return res.status(409).json({ message: "อีเมลนี้ถูกใช้ไปแล้ว" });
+    }
+
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
 
 
 // ---------- Start server ----------

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-23T13:46:15.844Z",
+  "timestamp": "2025-10-24T07:15:07.089Z",
   "page": "register",
   "formExample": {
     "name": "Pat0",
@@ -16,15 +16,9 @@
         "password": "222212345678900",
         "role": "user"
       },
-      "statusCode": 201,
+      "statusCode": 409,
       "responseBody": {
-        "message": "User created successfully",
-        "user": {
-          "id": 87,
-          "username": "Pat2222000",
-          "email": "Pat2222000@gmail.com",
-          "usertype": "user"
-        }
+        "message": "อีเมลนี้ถูกใช้ไปแล้ว"
       }
     }
   ]
